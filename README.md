@@ -1,46 +1,39 @@
-# Getting Started with Create React App
+# Guia de Configuração do Projeto
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Assim que fizer o fork do projeto, é preciso configurar o mesmo na máquina antes de executar o `npm start`
 
-## Available Scripts
+## Instalando as Dependencias
 
-In the project directory, you can run:
+Execute o seguinte comando no terminal
 
-### `npm start`
+```sh
+npm i
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Isso irá instalar as dependencias do Node e do React que será preciso pra poder executar o projeto corretamente. Em seguida haverá erros no projeto relacionados ao `eslint`, para resolver de forma rápida execute o comando abaixo no terminal
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```sh
+npx eslint --fix .
+```
 
-### `npm test`
+## Instalando o Styled-Components
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para esse projeto, iremos usar o `styled-components` para estilizar os componentes do projeto, agora no terminal execute o comando abaixo para instalar
 
-### `npm run build`
+```sh
+npm i --save styled-components
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Logo em seguida iremos precisar da tipagem para o `styled-components` para que ele possa reconhecer a tipagem do msm, de volta para o terminal execute o comando abaixo
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sh
+npm i --save-dev @types/styled-components
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Instalando o Redux
 
-### `npm run eject`
+Tendo executado os comandos acima, agora só falta instalar o pacote Redux do React, abra o terminal e digite o seguinte comando que está abaixo
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+npm i --save react-redux @reduxjs/toolkit
+```
