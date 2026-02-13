@@ -16,7 +16,7 @@ const Tarefa = ({ titulo, prioridade, status, descricao }: Props) => {
       <S.Titulo>{titulo}</S.Titulo>
       <S.Tag>{prioridade}</S.Tag>
       <S.Tag>{status}</S.Tag>
-      <S.Descricao>{descricao}</S.Descricao>
+      <S.Descricao value={descricao} />
       <S.ActionBar>
         {editar ? (
           <>
