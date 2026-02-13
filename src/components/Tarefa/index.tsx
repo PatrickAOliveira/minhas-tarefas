@@ -1,21 +1,37 @@
+import { useState } from 'react'
 import * as S from './styles'
 
-const Tarefa = () => (
-  <S.Card>
-    <S.Titulo>Nome da tarefa</S.Titulo>
-    <S.Tag>Importante</S.Tag>
-    <S.Tag>Pendente</S.Tag>
-    <S.Descricao>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea officiis quae
-      aliquam aut aperiam, iusto aliquid eveniet libero perspiciatis blanditiis
-      iure in veritatis id, hic ullam. Laudantium accusantium blanditiis
-      exercitationem?
-    </S.Descricao>
-    <S.ActionBar>
-      <S.Botao>Editar</S.Botao>
-      <S.Botao>Remover</S.Botao>
-    </S.ActionBar>
-  </S.Card>
-)
+type Props = {
+  titulo: string
+  prioridade: string
+  status: string
+  descricao: string
+}
+
+const Tarefa = ({ titulo, prioridade, status, descricao }: Props) => {
+  const [editar, setEditar] = useState(false)
+
+  return (
+    <S.Card>
+      <S.Titulo>{titulo}</S.Titulo>
+      <S.Tag>{prioridade}</S.Tag>
+      <S.Tag>{status}</S.Tag>
+      <S.Descricao>{descricao}</S.Descricao>
+      <S.ActionBar>
+        {editar ? (
+          <>
+            <S.Botao>Salvar</S.Botao>
+            <S.Botao onClick={() => setEditar(false)}>Cancelar</S.Botao>
+          </>
+        ) : (
+          <>
+            <S.Botao onClick={() => setEditar(true)}>Editar</S.Botao>
+            <S.Botao>Remover</S.Botao>
+          </>
+        )}
+      </S.ActionBar>
+    </S.Card>
+  )
+}
 
 export default Tarefa
