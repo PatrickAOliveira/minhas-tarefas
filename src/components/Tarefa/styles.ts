@@ -1,4 +1,30 @@
 import styled from 'styled-components'
+import _var from '../../styles/var'
+
+type TagProps = {
+  prioridade?: string
+  status?: string
+}
+
+function retornaCor(props: TagProps): string {
+  if ('status' in props) {
+    switch (props['status']) {
+      case 'pendente':
+        return _var['amarelo']
+      case 'concluída':
+        return _var['verde']
+    }
+  } else if ('prioridade' in props) {
+    switch (props['prioridade']) {
+      case 'urgente':
+        return _var['vermelho']
+      case 'importante':
+        return _var['amarelo2']
+    }
+  }
+
+  return '#ccc'
+}
 
 export const Card = styled.div`
   background-color: #fcfcfc;
@@ -14,12 +40,12 @@ export const Titulo = styled.h3`
   margin-bottom: 16px;
 `
 
-export const Tag = styled.span`
+export const Tag = styled.span<TagProps>`
   padding: 4px 8px;
   color: #fff;
   font-weight: bold;
   font-size: 10px;
-  background-color: #e1a32a;
+  background-color: ${(props) => retornaCor(props)};
   margin-right: 16px;
   border-radius: 8px;
   display: inline-block;
@@ -54,4 +80,12 @@ export const Botao = styled.button`
   background-color: #2f3640;
   border-radius: 8px;
   margin-right: 8px;
+`
+
+export const BtnSalvar = styled(Botao)`
+  background-color: ${_var.verde};
+`
+
+export const BtnCancelarRemover = styled(Botao)`
+  background-color: ${_var.vermelho};
 `
