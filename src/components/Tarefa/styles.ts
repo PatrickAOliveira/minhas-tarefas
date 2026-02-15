@@ -1,24 +1,26 @@
 import styled from 'styled-components'
 import _var from '../../styles/var'
+import * as enums from '../../utils/enums/task'
 
 type TagProps = {
-  prioridade?: string
-  status?: string
+  prioridade?: enums.Prioridade
+  status?: enums.Status
+  parametro: 'status' | 'prioridade'
 }
 
 function retornaCor(props: TagProps): string {
-  if ('status' in props) {
+  if (props['parametro'] === 'status') {
     switch (props['status']) {
-      case 'pendente':
+      case enums.Status.PENDENTE:
         return _var['amarelo']
-      case 'concluída':
+      case enums.Status.CONCLUIDA:
         return _var['verde']
     }
-  } else if ('prioridade' in props) {
+  } else {
     switch (props['prioridade']) {
-      case 'urgente':
+      case enums.Prioridade.URGENTE:
         return _var['vermelho']
-      case 'importante':
+      case enums.Prioridade.IMPORTANTE:
         return _var['amarelo2']
     }
   }
