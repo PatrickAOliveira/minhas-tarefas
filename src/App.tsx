@@ -1,16 +1,19 @@
+import { Provider } from 'react-redux'
 import Sidebar from './containers/Sidebar'
 import TaskList from './containers/TaskList'
 import EstiloGlobal, { Container } from './styles'
 
+import store from './store'
+
 function App() {
   return (
-    <div>
+    <Provider store={store}>
       <EstiloGlobal />
       <Container>
         <Sidebar />
         <TaskList />
       </Container>
-    </div>
+    </Provider>
   )
 }
 
