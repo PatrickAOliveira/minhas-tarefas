@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import Tarefa from '../../models/Tarefa'
-import tarefasData from '../../data'
+import tarefasJS from '../../data'
 
 type TarefasState = {
   itens: Tarefa[]
 }
 
 const initialState: TarefasState = {
-  itens: tarefasData
+  itens: tarefasJS
 }
 
 const tarefasSlice = createSlice({

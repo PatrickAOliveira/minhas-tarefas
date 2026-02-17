@@ -17,6 +17,7 @@ const TaskList = () => {
         {itens.map(({ titulo, descricao, prioridade, status, id }) => (
           <li key={id}>
             <Tarefa
+              id={id}
               titulo={titulo}
               descricao={descricao}
               prioridade={prioridade}
