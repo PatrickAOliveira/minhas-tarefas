@@ -3,7 +3,7 @@ import * as enums from './utils/enums/task'
 const tarefasJS = [
   {
     id: 1,
-    titulo: 'Estudar Typescript',
+    titulo: 'Estudar TypeScript',
     prioridade: enums.Prioridade.NORMAL,
     status: enums.Status.PENDENTE,
     descricao: 'Ver a aula 3 da EBAC'
