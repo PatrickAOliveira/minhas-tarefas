@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux'
 import FiltroCard from '../../components/FiltroCard'
-
-import * as S from './styles'
 import { RootReducer } from '../../store'
 import { alterarTermo } from '../../store/reducers/filtro'
+
+import * as S from './styles'
+import * as enums from '../../utils/enums/task'
 
 const Sidebar = () => {
   const dispatch = useDispatch()
@@ -19,12 +20,32 @@ const Sidebar = () => {
           onChange={({ target: { value } }) => dispatch(alterarTermo(value))}
         />
         <S.Filtros>
-          <FiltroCard contador={1} legenda="pendentes" />
-          <FiltroCard contador={2} legenda="concluidas" />
-          <FiltroCard contador={3} legenda="urgentes" />
-          <FiltroCard contador={4} legenda="importantes" />
-          <FiltroCard contador={5} legenda="normal" />
-          <FiltroCard contador={10} legenda="todas" ativo />
+          <FiltroCard
+            valor={enums.Status.PENDENTE}
+            criterio="status"
+            legenda="pendentes"
+          />
+          <FiltroCard
+            valor={enums.Status.CONCLUIDA}
+            criterio="status"
+            legenda="concluidas"
+          />
+          <FiltroCard
+            valor={enums.Prioridade.URGENTE}
+            criterio="prioridade"
+            legenda="urgentes"
+          />
+          <FiltroCard
+            valor={enums.Prioridade.IMPORTANTE}
+            criterio="prioridade"
+            legenda="importantes"
+          />
+          <FiltroCard
+            valor={enums.Prioridade.NORMAL}
+            criterio="prioridade"
+            legenda="normal"
+          />
+          <FiltroCard criterio="todas" legenda="todas" />
         </S.Filtros>
       </div>
     </S.Aside>

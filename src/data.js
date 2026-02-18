@@ -28,6 +28,13 @@ const tarefasJS = [
     prioridade: enums.Prioridade.IMPORTANTE,
     status: enums.Status.PENDENTE,
     descricao: 'Se arrumar e pôr o uniforme para trabalhar na lanchonete às 19h'
+  },
+  {
+    id: 5,
+    titulo: 'Estudar JavaScript',
+    prioridade: enums.Prioridade.NORMAL,
+    status: enums.Status.CONCLUIDA,
+    descricao: 'Estudar JavaScript revendo o exercício do módulo 7'
   }
 ]
 
