@@ -51,3 +51,7 @@ npm i --save react-router-dom
 Caso queira ver o projeto funcionando normalmente, basta acessar o link abaixo para ver
 
 <https://react-redux-todo-list-kappa.vercel.app/>
+
+## Arquitetura do Projeto
+
+![Arquitetura do Projeto](./public/arquitetura.png)
