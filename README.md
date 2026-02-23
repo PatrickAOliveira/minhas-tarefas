@@ -45,3 +45,9 @@ Para prosseguirmos com o desenvolvimento do projeto, iremos precisar instalar o 
 ```sh
 npm i --save react-router-dom
 ```
+
+## Projeto na Prática
+
+Caso queira ver o projeto funcionando normalmente, basta acessar o link abaixo para ver
+
+<https://react-redux-todo-list-kappa.vercel.app/>
